@@ -52,25 +52,34 @@ main
     font-family: 'Jua', sans-serif;
     font-size: 20px;
 }
-#task-box{
-    border-radius: 5px;
-    border: 2px solid #000000;
-    background-color: #ffffff;
-    border-radius: 5px;
-    height: 25px;
-    width: 400px;
+.task-box{
+    width: 75%;
+    background-color: white;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px; 
+    margin: 5px;
 }
-.task-desc{
+.tasks
+{
     display: flex;
-    margin-top: 20px;
-    gap: 0px 20px;
+    gap: 0px 5px;
 }
+#icons-task
+{
+    display: flex;
+    gap: 0px 5px;
+}
+li{
+    list-style-type: none;
+}
+
 #checkbox-button{
     width: 20px;
     height: 20px;
     border: 2px;
 }
-#button
+button
 {
     background-color: #ffffff00;
     border: 0px;
