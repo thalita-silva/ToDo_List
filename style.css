@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 @media screen and (max-width: 600px){
-    .title-box, .input-task
+    .title-box, .input-task, #text-task
     {
         width: 100%;
         margin-top: 0;
@@ -13,17 +13,21 @@
     text-decoration: none;
 }
 body{
-    font-size: 100%;
-    position: relative;
-    background: #fff9d9;
+
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #fff9d9;
 }
-.title-box{
-    padding-top: 30px;
-    margin: 32px;
+
+header
+{
+    padding: 32px;
+}
+main
+{
+    padding: 32px;
 }
 .title{
     font-size: 35px;
@@ -66,6 +70,26 @@ body{
     height: 20px;
     border: 2px;
 }
-
+#button
+{
+    background-color: #ffffff00;
+    border: 0px;
+}
+footer
+{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    background-color: #5b3a92;
+    bottom: 0;
+}
+#footer-info
+{
+    font: arial;
+    font-size: 15px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
 
 /* https://colors.muz.li/palette/92793A/665d29/fff9d9/5b3a92/402966 */
