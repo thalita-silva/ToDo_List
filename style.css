@@ -83,6 +83,7 @@ li{
 button
 {
     background-color: #ffffff00;
+    cursor: pointer;
     border: 0px;
 }
 footer
@@ -101,5 +102,82 @@ footer
     display: flex;
     justify-content: center;
 }
-
+#edit-task
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: #ffffff;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 200;
+    display: none;
+}
+#edit-task.open
+{
+    display: block !important;
+}
+#task-edit-window
+{
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+#task-edit-window.open
+{
+    display: block !important;
+}
+#close-edit-btn
+{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+form
+{
+    margin-top: 20px;
+    width: 100%;
+}
+.line-edit
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.line-edit label
+{
+    margin-bottom: 5px;
+}
+.line-edit input
+{ 
+    padding: 12px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid black;
+    font-size: 12px;
+}
+.line-edit button
+{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 12px;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: #92793A;
+    outline: none;
+}
+.line-edit button:hover
+{
+    background: #74643f;
+}
 /* https://colors.muz.li/palette/92793A/665d29/fff9d9/5b3a92/402966 */
