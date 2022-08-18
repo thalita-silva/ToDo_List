@@ -1,27 +1,13 @@
 let input_task = document.querySelector("#text-task");
 let create_task = document.querySelector(".add-task-btn");
 let list_tasks = document.querySelector(".list");
-let del_task = document.querySelector(".del-task-btn");
-let btn_update_task = document.querySelector(".update-task-btn");
-let btn_close_edit = document.querySelector("#close-edit-btn");
-let task_edit = document.querySelector("#edit-task");
-let task_edit_window = document.querySelector(".task-edit-window");
-let input_name_task = document.querySelector("#input-new-name");
-let task_id = document.querySelector("#task-id");
-const ids = Number.MAX_VALUE;
+let edit_window_task = document.querySelector("#edit-task");
+let edit_window_task_back = document.querySelector("#task-edit-window");
+let close_edit_btn = document.querySelector("#close-edit-btn");
+let update_edit_btn = document.querySelector("#update-task-btn");
+let id_task_edit = document.querySelector("#task-id");
+let name_task_edit = document.querySelector("#input-new-name");
 
-input_task.addEventListener('keypress',(e) =>
-{
-    if(e.keyCode == 13)
-    {
-        let task = 
-        {
-            name: input_task.value,
-            id: generateId(),
-        }
-        addTask(task);
-    }
-})
 create_task.addEventListener('click',(e)=>
 {
     let task = 
@@ -31,32 +17,31 @@ create_task.addEventListener('click',(e)=>
     }
     addTask(task);
 })
-btn_close_edit.addEventListener('click',(e)=>
+
+close_edit_btn.addEventListener('click', (e)=>
 {
     change_window();
 })
-btn_update_task.addEventListener('click',(e)=>
+update_edit_btn.addEventListener('click',(e)=>
 {
     e.preventDefault();
-    print('hereeee');
-    let id_task = task_id.innerHTML.replace('#','');
+    let id_task  = id_task_edit.innerHTML.replace('#','');
     let task = 
     {
-        name: input_name_task.value,
+        name: name_task_edit.value,
         id: id_task
     }
     let act_task = document.getElementById(''+id_task+'');
     if(act_task)
     {
-        let li = createTagLi(task);
-        list_tasks.replaceChild(li,act_task);
+        let update = createTagLi(task);
+        list_tasks.replaceChild(update,act_task);
         change_window();
     }
     else
     {
-        alert('Task not found!');
+        alert("Task not found");
     }
-    
 })
 function generateId()
 {
@@ -114,16 +99,21 @@ function delTask(idTask)
 }
 function editTask(idTask)
 {
-    let update = document.getElementById(''+idTask+'');
-    if (update)
+    let li = document.getElementById(''+idTask+'');
+    if(li)
     {
-        task_id.innerHTML = '#ssss' + idTask;
-        input_name_task.value = update.innerText;
+        id_task_edit.innerHTML = '#'+idTask;
+        name_task_edit.value = li.innerText;
         change_window();
+
+    }
+    else{
+        alert("Task not found");
     }
 }
 function change_window()
 {
-    task_edit.classList.toggle('open');
-    task_edit_window.classList.toggle('open');
+    edit_window_task.classList.toggle('open');
+    edit_window_task_back.classList.toggle('open');
 }
+
